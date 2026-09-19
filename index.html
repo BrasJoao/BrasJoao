@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Para Elisa 🤍</title>
+
+    <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background:
+                radial-gradient(circle at 10% 10%, #ffffff 0%, transparent 25%),
+                radial-gradient(circle at 90% 20%, #f4dce4 0%, transparent 30%),
+                linear-gradient(135deg, #f8eef1, #fffafa, #f1e4e8);
+
+            color: #45343c;
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* =========================
+           FUNDO
+        ========================= */
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            opacity: .18;
+
+            background-image:
+                radial-gradient(#9b7180 1px, transparent 1px);
+
+            background-size: 25px 25px;
+        }
+
+        /* =========================
+           TELA INICIAL
+        ========================= */
+
+        .hero {
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 40px 20px;
+            text-align: center;
+
+            position: relative;
+        }
+
+        .hero-card {
+            width: 100%;
+            max-width: 900px;
+
+            padding: 75px 40px;
+
+            border-radius: 35px;
+
+            background: rgba(255,255,255,.62);
+
+            backdrop-filter: blur(18px);
+
+            border: 1px solid rgba(130,90,105,.18);
+
+            box-shadow:
+                0 30px 90px rgba(70,40,50,.12);
+        }
+
+        .mini-title {
+            font-size: 12px;
+
+            letter-spacing: 5px;
+
+            text-transform: uppercase;
+
+            color: #9c7080;
+
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+
+            font-size: clamp(80px, 14vw, 160px);
+
+            line-height: .8;
+
+            font-weight: 600;
+
+            color: #4d3740;
+
+            margin-bottom: 35px;
+        }
+
+        .hero p {
+            max-width: 680px;
+
+            margin: auto;
+
+            font-size: 16px;
+
+            line-height: 2;
+
+            color: #705e66;
+        }
+
+        .heart {
+            font-size: 30px;
+
+            margin-top: 35px;
+
+            display: inline-block;
+
+            animation: heartbeat 2s infinite;
+        }
+
+        @keyframes heartbeat {
+
+            0%, 100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.2);
+            }
+
+        }
+
+        /* =========================
+           SEÇÕES
+        ========================= */
+
+        section {
+            width: min(1100px, calc(100% - 35px));
+
+            margin: 0 auto 100px;
+        }
+
+        .section-title {
+            text-align: center;
+
+            margin-bottom: 40px;
+        }
+
+        .section-title span {
+            display: block;
+
+            font-size: 11px;
+
+            letter-spacing: 4px;
+
+            text-transform: uppercase;
+
+            color: #a47786;
+
+            margin-bottom: 8px;
+        }
+
+        .section-title h2 {
+            font-family: 'Cormorant Garamond', serif;
+
+            font-size: clamp(48px, 7vw, 75px);
+
+            font-weight: 600;
+
+            color: #4b3540;
+        }
+
+        /* =========================
+           CARTA
+        ========================= */
+
+        .letter {
+            max-width: 850px;
+
+            margin: auto;
+
+            padding: 50px clamp(25px, 6vw, 70px);
+
+            background: rgba(255,255,255,.72);
+
+            border: 1px solid rgba(130,90,105,.15);
+
+            border-radius: 30px;
+
+            box-shadow:
+                0 25px 60px rgba(70,40,50,.09);
+
+            line-height: 2;
+
+            font-size: 16px;
+        }
+
+        .letter p {
+            margin-bottom: 20px;
+        }
+
+        .signature {
+            text-align: right;
+
+            margin-top: 35px;
+
+            font-family: 'Cormorant Garamond', serif;
+
+            font-size: 32px;
+
+            color: #805566;
+        }
+
+        /* =========================
+           GALERIA
+        ========================= */
+
+        .gallery {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+        .photo {
+            position: relative;
+
+            height: 420px;
+
+            overflow: hidden;
+
+            border-radius: 25px;
+
+            background: #ead9de;
+
+            border: 1px solid rgba(130,90,105,.15);
+
+            box-shadow:
+                0 20px 50px rgba(70,40,50,.12);
+        }
+
+        .photo:nth-child(2),
+        .photo:nth-child(5) {
+            transform: translateY(30px);
+        }
+
+        .photo img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            display: block;
+
+            transition: transform .7s ease;
+        }
+
+        .photo:hover img {
+            transform: scale(1.07);
+        }
+
+        .photo::after {
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    to top,
+                    rgba(35,20,28,.55),
+                    transparent 45%
+                );
+
+            pointer-events: none;
+        }
+
+        .caption {
+            position: absolute;
+
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+
+            z-index: 2;
+
+            color: white;
+
+            font-size: 13px;
+
+            letter-spacing: .5px;
+
+            text-align: center;
+        }
+
+        /* =========================
+           MOMENTOS
+        ========================= */
+
+        .moments {
+            max-width: 800px;
+
+            margin: auto;
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 18px;
+        }
+
+        .moment {
+            padding: 25px 30px;
+
+            background: rgba(255,255,255,.65);
+
+            border-left: 3px solid #a47786;
+
+            border-radius: 0 20px 20px 0;
+
+            box-shadow:
+                0 10px 30px rgba(70,40,50,.05);
+        }
+
+        .moment h3 {
+            font-family: 'Cormorant Garamond', serif;
+
+            font-size: 30px;
+
+            color: #684653;
+
+            margin-bottom: 5px;
+        }
+
+        .moment p {
+            color: #705f65;
+
+            line-height: 1.7;
+        }
+
+        /* =========================
+           FINAL
+        ========================= */
+
+        .final {
+            text-align: center;
+
+            padding: 70px 20px 100px;
+        }
+
+        .final h2 {
+            font-family: 'Cormorant Garamond', serif;
+
+            font-size: clamp(50px, 8vw, 90px);
+
+            color: #4b3540;
+
+            line-height: 1;
+        }
+
+        .final p {
+            margin-top: 20px;
+
+            color: #806b73;
+
+            font-size: 14px;
+        }
+
+        /* =========================
+           RODAPÉ
+        ========================= */
+
+        footer {
+            text-align: center;
+
+            padding: 25px;
+
+            font-size: 10px;
+
+            letter-spacing: 4px;
+
+            text-transform: uppercase;
+
+            color: #a17f89;
+        }
+
+        /* =========================
+           CELULAR
+        ========================= */
+
+        @media (max-width: 750px) {
+
+            .hero-card {
+                padding: 55px 22px;
+            }
+
+            .hero h1 {
+                font-size: 90px;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .photo {
+                height: 450px;
+            }
+
+            .photo:nth-child(2),
+            .photo:nth-child(5) {
+                transform: none;
+            }
+
+            .letter {
+                padding: 35px 25px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         INÍCIO
+    ========================== -->
+
+    <header class="hero">
+
+        <div class="hero-card">
+
+            <div class="mini-title">
+                Um cantinho feito especialmente para você
+            </div>
+
+            <h1>
+                Elisa
+            </h1>
+
+            <p>
+                Meu amor, você não sabe o quanto eu te amo,
+                o quanto eu te quero e o quanto você me faz bem.
+                Quero que nós estejamos juntos até o fim,
+                mesmo com nossas briguinhas e nossos desentendimentos.
+            </p>
+
+            <div class="heart">
+                ♡
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================
+         CARTA
+    ========================== -->
+
+    <section>
+
+        <div class="section-title">
+
+            <span>
+                Algumas palavras
+            </span>
+
+            <h2>
+                Para você
+            </h2>
+
+        </div>
+
+
+        <div class="letter">
+
+            <p>
+                Espero te fazer muito feliz e peço desculpas
+                pelas vezes em que faço alguma coisa que não deveria.
+            </p>
+
+            <p>
+                Me desculpa também se eu te magoei em algum momento
+                do nosso relacionamento. Eu sei que não sou perfeito,
+                mas quero mudar e aprender cada vez mais para sempre
+                fazer o melhor por nós.
+            </p>
+
+            <p>
+                Quero viver muitos momentos ao seu lado,
+                superar nossas dificuldades e continuar construindo
+                nossa história juntos.
+            </p>
+
+            <p>
+                Eu te amo, minha patinha. 🤍
+            </p>
+
+            <div class="signature">
+                João Pedro ♡
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         FOTOS
+    ========================== -->
+
+    <section>
+
+        <div class="section-title">
+
+            <span>
+                Nossos momentos
+            </span>
+
+            <h2>
+                Memórias
+            </h2>
+
+        </div>
+
+
+        <div class="gallery">
+
+
+            <!-- FOTO 1 -->
+
+            <div class="photo">
+
+                <img
+                    src="WhatsApp Image 2026-09-18 at 23.03.33.jpeg"
+                    alt="Nossa foto">
+
+                <div class="caption">
+                    Um momento que eu guardo comigo
+                </div>
+
+            </div>
+
+
+
+            <!-- FOTO 2 -->
+
+            <div class="photo">
+
+                <img
+                    src="ttk.jpeg"
+                    alt="Nossa foto">
+
+                <div class="caption">
+                    Mais uma memória nossa
+                </div>
+
+            </div>
+
+
+
+            <!-- FOTO 3 -->
+
+            <div class="photo">
+
+                <img
+                    src="de costas.jpeg"
+                    alt="Nossa foto">
+
+                <div class="caption">
+                    Nós dois ♡
+                </div>
+
+            </div>
+
+
+
+            <!-- FOTO 4 -->
+
+            <div class="photo">
+
+                <img
+                    src="lindeza.jpeg"
+                    alt="Nossa foto">
+
+                <div class="caption">
+                    Um dia especial
+                </div>
+
+            </div>
+
+
+
+            <!-- FOTO 5 -->
+
+            <div class="photo">
+
+                <img
+                    src="efeito.jpeg"
+                    alt="Nossa foto">
+
+                <div class="caption">
+                    Uma lembrança para sempre
+                </div>
+
+            </div>
+
+
+
+            <!-- FOTO 6 -->
+
+            <div class="photo">
+
+                <img
+                    src="alianca.jpeg"
+                    alt="Nossa foto">
+
+                <div class="caption">
+                    Ainda temos muitos momentos pela frente
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         HISTÓRIA
+    ========================== -->
+
+    <section>
+
+        <div class="section-title">
+
+            <span>
+                Nossa história
+            </span>
+
+            <h2>
+                Momentos especiais
+            </h2>
+
+        </div>
+
+
+        <div class="moments">
+
+
+            <div class="moment">
+
+                <h3>
+                    O começo
+                </h3>
+
+                <p>
+                    Tudo começa no casamento de Isaac,te vi lá e falei,nossa bbquenteeee kkkk,e falei vai ser minha se deus quiser,chegar em casa vou da um jeito de mandar msg,começamos a conversar sem parar kkkk,e hj nos namora!S2
+                </p>
+
+            </div>
+
+
+            <div class="moment">
+
+                <h3>
+                    Nosso Primeiro encontro em Isaac
+                </h3>
+
+                <p>
+                    Ensaio em Leme do Prado,nos dois ansiosos, especialmente você,"deixa eu passar o gloss" ou ent o "respira vai"
+                </p>
+
+            </div>
+
+
+            <div class="moment">
+
+                <h3>
+                    E ainda vem muito mais...
+                </h3>
+
+                <p>
+                    Porque nossa história ainda está sendo escrita.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         FINAL
+    ========================== -->
+
+    <div class="final">
+
+        <h2>
+            Para sempre,
+            uma memória de nós. ♡
+        </h2>
+
+        <p>
+            Feito com carinho especialmente para Elisa.
+        </p>
+
+    </div>
+
+
+
+    <footer>
+
+        João Pedro · Elisa
+
+    </footer>
+
+
+</body>
+</html>
